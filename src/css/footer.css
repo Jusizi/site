@@ -1,0 +1,37 @@
+footer {
+    width: 100%;
+    color: #707070;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+footer .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer ul {
+    list-style: none;
+    display: flex;
+}
+
+footer ul li {
+    margin-right: 20px;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons a {
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.social-icons img {
+    border-radius: 50%;
+    width: 30px;
+}
