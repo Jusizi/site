@@ -35,3 +35,17 @@ footer a {
     border-radius: 50%;
     width: 30px;
 }
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+    }
+    footer .content {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+}
