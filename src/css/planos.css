@@ -2,7 +2,6 @@
     text-align: center;
     padding: 50px 20px;
     background: #fff;
-    margin-top: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -19,17 +18,18 @@
 }
 
 .planos-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
+/* Ajuste a largura e espaçamento dos planos */
 .plano {
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    width: 320px;
     text-align: center;
     border: 1px solid #ddd;
     transition: 0.3s;
@@ -127,4 +127,17 @@
 
 .plano button:hover {
     background: #0056b3;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .planos-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .planos-container {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
 }
