@@ -113,14 +113,14 @@
     <div class="content" id="planos" style="padding: 10vh 10px">
         <section class="planos">
             <h2>Escolha o Plano Ideal para Você</h2>
-            <p>Flexibilidade para atender suas necessidades.<br>Pague mensalmente ou economize 20% no plano anual.<br><b>Teste Grátis!</b></p>
+            <p>Flexibilidade para atender suas necessidades.<br>Pague mensalmente ou economize 13% no plano anual.<br><b>Teste Grátis!</b></p>
         
             <div class="planos-container">
                 <!-- Plano Essencial -->
                 <div class="plano">
                     <h3>Plano Essencial</h3>
                     <p class="preco-mensal">R$ 130,00/mês</p>
-                    <p class="preco-anual">R$ 1.248,00/ano <span class="desconto">(20% off)</span></p>
+                    <p class="preco-anual">R$ 1.369,60/ano <span class="desconto">(13% off)</span></p>
                     <ul>
                         <li>1 usuário</li>
                         <li>3 processos push/atualizações</li>
@@ -131,14 +131,21 @@
                         <li>1GB de espaço para documentos</li>
                         <li>Financeiro básico (débitos e créditos)</li>
                     </ul>
-                    <button>Assinar</button>
+                    <!-- Seleção de tipo de pagamento -->
+                    <div class="select-wrapper">
+                        <select class="plano-selecao" name="plano-essencial">
+                            <option value="mensal">Mensal - R$ 130,00</option>
+                            <option value="anual">Anual - R$ 1.369,60</option>
+                        </select>
+                    </div>
+                    <button onclick="assinar('Essencial')">Assinar</button>
                 </div>
         
                 <!-- Plano Profissional (Destaque) -->
                 <div class="plano plano-destaque">
                     <h3>Plano Profissional</h3>
                     <p class="preco-mensal">R$ 230,00/mês</p>
-                    <p class="preco-anual">R$ 2.208,00/ano <span class="desconto">(20% off)</span></p>
+                    <p class="preco-anual">R$ 2.425,20/ano <span class="desconto">(13% off)</span></p>
                     <ul>
                         <li>Até 5 usuários</li>
                         <li>10 processos push/atualizações</li>
@@ -151,14 +158,21 @@
                         <li>Integração com Asaas para cobranças automáticas</li>
                         <li>Suporte via chat e e-mail</li>
                     </ul>
-                    <button>Assinar</button>
+                    <!-- Seleção de tipo de pagamento -->
+                    <div class="select-wrapper">
+                        <select class="plano-selecao" name="plano-profissional">
+                            <option value="mensal">Mensal - R$ 230,00</option>
+                            <option value="anual">Anual - R$ 2.425,20</option>
+                        </select>
+                    </div>
+                    <button onclick="assinar('Profissional')">Assinar</button>
                 </div>
         
                 <!-- Plano Premium -->
                 <div class="plano">
                     <h3>Plano Premium</h3>
                     <p class="preco-mensal">R$ 330,00/mês</p>
-                    <p class="preco-anual">R$ 3.168,00/ano <span class="desconto">(20% off)</span></p>
+                    <p class="preco-anual">R$ 3.562,40/ano <span class="desconto">(13% off)</span></p>
                     <ul>
                         <li>Usuários ilimitados</li>
                         <li>Processos push/atualizações ilimitados</li>
@@ -172,10 +186,41 @@
                         <li>Suporte prioritário (chat, e-mail e WhatsApp)</li>
                         <li>Acesso antecipado a novas funcionalidades</li>
                     </ul>
-                    <button>Assinar</button>
+                    <!-- Seleção de tipo de pagamento -->
+                    <div class="select-wrapper">
+                        <select class="plano-selecao" name="plano-premium">
+                            <option value="mensal">Mensal - R$ 330,00</option>
+                            <option value="anual">Anual - R$ 3.562,40</option>
+                        </select>
+                    </div>
+                    <button onclick="assinar('Premium')">Assinar</button>
                 </div>
             </div>
         </section>
+        
+        <script>
+            function ucfirst(str) {
+                if (typeof str !== 'string') return str; // Check if the input is a string
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
+            const planos_links = {
+                "EssencialMensal":"https://buy.stripe.com/aEU29VbxO3X3gGkeV0",
+                "EssencialAnual":"https://buy.stripe.com/bIY6qbfO465bbm0bIP",
+                "ProfissionalMensal":"https://buy.stripe.com/fZedSDfO4gJPahW146",
+                "ProfissionalAnual":"https://buy.stripe.com/fZeeWH8lC517fCg6or",
+                "PremiumMensal":"https://buy.stripe.com/6oEbKveK09hnahWeV2",
+                "PremiumAnual":"https://buy.stripe.com/3cs3dZcBSgJP2Pu6ox",
+            };
+
+            function assinar(plano) {
+                const selecaoPlano = document.querySelector(`[name="plano-${plano.toLowerCase()}"]`);
+                const tipoPagamento = selecaoPlano.value;
+
+                let tipoPagamentoFormatado = ucfirst(tipoPagamento);
+
+                window.open(planos_links[`${plano}${tipoPagamentoFormatado}`], plano);
+            }
+        </script>
     </div>
 
     <div class="content">

@@ -129,6 +129,59 @@
     background: #0056b3;
 }
 
+
+ /* Estilos para o select box */
+ .select-wrapper {
+    position: relative;
+    margin-top: 10px;
+}
+
+.plano-selecao {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.plano-selecao:focus {
+    border-color: #007BFF; /* Cor de foco azul */
+    outline: none;
+}
+
+.plano-selecao option {
+    padding: 10px;
+}
+
+.plano-selecao::-ms-expand {
+    display: none; /* Esconde o botão de expandir do select no IE */
+}
+
+/* Estilos do botão de Assinar */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .planos-container {
