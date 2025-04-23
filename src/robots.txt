@@ -1,4 +1,6 @@
 # robots.txt para Jusizi - Software Jurídico
 
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://jusizi.com.br/sitemap.xml
