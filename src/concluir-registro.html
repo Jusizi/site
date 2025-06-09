@@ -63,7 +63,20 @@
     <section class="content" style="height: 100vh;">
         <h1>Conclua o seu registro</h1>
         <script>
-            console.log("Daqui para frente é só pra traz");
+
+            const url = new URL(window.location.href);
+            const id = url.searchParams.get("id");
+            const baseURL = 'http://localhost:8052';
+
+            (async f => {
+
+
+                const response = await fetch(`${baseURL}/pagamento?id=${id}`);
+
+                console.log(response);
+                console.log("Daqui para frente é só pra traz, o id é: ", id);
+            })();
+
         </script>
     </section>
 
@@ -75,11 +88,11 @@
                 <li><a href="/termos-e-condicoes-de-uso.html">Termos e condições de uso</a></li>
             </ul>
             <div class="social-icons">
-                <a href="https://instagram.com/jusizi_app" target="instagram"><img src="img/logos/instagram.webp" alt="Logo Instagram - Jusizi - Software Jurídico" loading="lazy"></a>
-                <a href="https://w.app/jusizi" target="whatsapp"><img src="img/logos/whatsappbusiness.webp" alt="Logo Whatsapp Business - Jusizi - Software Jurídico" loading="lazy"></a>
-                <a href="https://github.com/Jusizi" target="github"><img src="img/logos/github.webp" alt="Logo GitHub - Jusizi - Software Jurídico" loading="lazy"></a>
-                <a href="/#"><img src="img/logos/x.webp" alt="Logo X - Jusizi - Software Jurídico" loading="lazy"></a>
-                <a href="/#"><img src="img/logos/linkedin.webp" alt="Logo Linkedin - Jusizi - Software Jurídico" loading="lazy"></a>
+                <a href="https://instagram.com/jusizi_app" target="instagram"><img src="img/logos/instagram.webp" alt="Logo Instagram - Jusizi - Software Jurídico"></a>
+                <a href="https://api.whatsapp.com/send?phone=5554984192072" target="whatsapp"><img src="img/logos/whatsappbusiness.webp" alt="Logo Whatsapp Business - Jusizi - Software Jurídico"></a>
+                <a href="https://github.com/Jusizi" target="github"><img src="img/logos/github.webp" alt="Logo GitHub - Jusizi - Software Jurídico"></a>
+                <a href="/#"><img src="img/logos/x.webp" alt="Logo X - Jusizi - Software Jurídico"></a>
+                <a href="/#"><img src="img/logos/linkedin.webp" alt="Logo Linkedin - Jusizi - Software Jurídico"></a>
             </div>
         </div>
     </footer>
